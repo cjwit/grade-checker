@@ -18,6 +18,24 @@ $(document).ready(function() {
 	console.log($('#P1score').val())
 	calculate();
 
+	noUiSlider.create(document.getElementById('essaySlider'), {
+		start: [100],
+		connect: [true, false],
+		range: {
+			'min': 0,
+			'max': 100
+		}
+	});
+
+	noUiSlider.create(document.getElementById('documentarySlider'), {
+		start: [100],
+		connect: [true, false],
+		range: {
+			'min': 0,
+			'max': 100
+		}
+	});
+
 	$('#submit').click(function() {
 		console.log('clicked')
 		calculate();

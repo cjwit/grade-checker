@@ -5,8 +5,7 @@
 	<head>
 		<title>Image Search Abstraction</title>
 		<link rel="stylesheet" href="src/bootstrap.min.css">
-		<script src="src/jquery-1.12.3.min.js"></script>
-		<script src="src/script.js"></script>
+		<link href="src/nouislider.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
@@ -63,29 +62,15 @@
 			</div>
 
 			<div class="row">
-				<form class="form-inline">
-					<div class="checkbox">
-						<label><input type="checkbox" data-toggle="toggle"> First project</label>
-					</div>
-					<div class="form-group">
-						<label class="sr-only" for="proj1">Project 1 Score</label>
-						<input id="P1score" type="text" class="form-control" id="proj1" value="100">
-					</div>
-				</form>
+				<div class="col-sm-4">Individual Fieldwork Essay</div>
+				<div class="col-sm-4">50</div>
+				<div class="col-sm-4"><div id="essaySlider"></div></div>
 			</div>
 			<div class="row">
-				<form class="form-inline">
-					<div class="checkbox">
-						<label><input type="checkbox" data-toggle="toggle"> First project</label>
-					</div>
-					<div class="form-group">
-						<label class="sr-only" for="proj1">Project 1 Score</label>
-						<input id="P1score" type="text" class="form-control" id="proj1" value="100">
-					</div>
-				</form>
+				<div class="col-sm-4">Fieldwork Documentary Video (with a group of up to 5 people)</div>
+				<div class="col-sm-4">50</div>
+				<div class="col-sm-4"><div id="documentarySlider"></div></div>
 			</div>
-
-
 			<div class="row">
 				<h3>
 					<button id="submit" class="btn btn-primary">Calculate!</button>
@@ -94,6 +79,11 @@
 			</div>
 
 		</div>
+
+		<script src="src/jquery-1.12.3.min.js"></script>
+		<script src="src/nouislider.min.js"></script>
+		<script src="src/script.js"></script>
+
 	</body>
 
 </html>
