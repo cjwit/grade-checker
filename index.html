@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="src/bootstrap.min.css">
 		<script src="src/jquery-1.12.3.min.js"></script>
 		<script src="src/script.js"></script>
-
 	</head>
 	<body>
 		<div class="container">
@@ -24,19 +23,74 @@
 				</p>
 			</div>
 			<div class="row">
-				<h3>Required Projects</h3>
+				<h3>Required Assignments</h3>
+			</div>
+			<div class="row">
+				<form class="form-inline">
+					<div class="form-group">
+						<label for="quizzes">Online Quizzes</label>
+						<input id="quizzes" type="text" class="form-control" value="100">
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<form class="form-inline">
+					<div class="form-group">
+						<label for="attendance">Attendance</label>
+						<input id="attendance" type="text" class="form-control" value="100">
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<form class="form-inline">
+					<div class="form-group">
+						<label for="event1">Musical Event Report (1 of 2)</label>
+						<input id="event1" type="text" class="form-control" value="100">
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<form class="form-inline">
+					<div class="form-group">
+						<label for="event2">Musical Event Report (2 of 2)</label>
+						<input id="event2" type="text" class="form-control" value="100">
+					</div>
+				</form>
+			</div>
+
+			<div class="row">
+				<h3>Choose Your Own Adventure</h3>
+			</div>
+
+			<div class="row">
+				<form class="form-inline">
+					<div class="checkbox">
+						<label><input type="checkbox" data-toggle="toggle"> First project</label>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="proj1">Project 1 Score</label>
+						<input id="P1score" type="text" class="form-control" id="proj1" value="100">
+					</div>
+				</form>
 			</div>
 			<div class="row">
 				<form class="form-inline">
 					<div class="checkbox">
-						<label><input type="checkbox"> First project</label>
+						<label><input type="checkbox" data-toggle="toggle"> First project</label>
 					</div>
 					<div class="form-group">
 						<label class="sr-only" for="proj1">Project 1 Score</label>
-						<input type="text" class="form-control" id="proj1" placeholder="100">
+						<input id="P1score" type="text" class="form-control" id="proj1" value="100">
 					</div>
 				</form>
+			</div>
 
+
+			<div class="row">
+				<h3>
+					<button id="submit" class="btn btn-primary">Calculate!</button>
+					With these numbers, you will get a <span id='numScore'></span>% in this class
+				</h3>
 			</div>
 
 		</div>
