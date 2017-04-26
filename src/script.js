@@ -13,7 +13,6 @@ var values = {
 }
 
 var calculateProjects = function() {
-	console.log('calculating projects');
 	var sum = 0;
 
 	for (var i = 0; i < projects.length; i++) {
@@ -25,21 +24,37 @@ var calculateProjects = function() {
 		console.log(current, inputBoxName, score)
 	}
 
-	console.log("sum ", sum)
-
 	return sum;
 }
 
+var letterGrade = function(score) {
+	var letter;
+	if (score < 60) {
+		letter = "F";
+	} else if (score < 70) {
+		letter = "D";
+	} else if (score < 80) {
+		letter = "C";
+	} else if (score < 90) {
+		letter = "B";
+	} else {
+		letter = "A";
+	}
+	$('#letterGrade').text(letter);
+	$('#letterGrade').removeClass();
+	$('#letterGrade').addClass(letter);
+}
+
 var calculate = function() {
-	console.log('calculating')
 
 	var quizzes = parseInt($('#quizzesScore').val()) * 0.2
 	var attendance = parseInt($('#attendanceScore').val()) * 0.2
 	var event1 = parseInt($('#event1Score').val()) * 0.05
 	var event2 = parseInt($('#event2Score').val()) * 0.05
 
-	var numScore = quizzes + attendance + event1 + event2 + calculateProjects();
+	var numScore = Math.round(quizzes + attendance + event1 + event2 + calculateProjects());
 	$('#numScore').text(numScore);
+	letterGrade(numScore);
 }
 
 var toggleButton = function(button) {
@@ -52,11 +67,9 @@ var toggleButton = function(button) {
 	} else {
 		projects.splice(i, 1);
 	}
-	console.log(projects)
 }
 
 $(document).ready(function() {
-	console.log($('#P1score').val())
 	calculate();
 
 	$('#submit').click(function() {
