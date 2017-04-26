@@ -21,7 +21,6 @@ var calculateProjects = function() {
 		var inputBoxName = "#" + current + "Score";
 		var score = $(inputBoxName).val();
 		sum += score * value;
-		console.log(current, inputBoxName, score)
 	}
 
 	return sum;
@@ -73,7 +72,6 @@ $(document).ready(function() {
 	calculate();
 
 	$('#submit').click(function() {
-		console.log('clicked')
 		calculate();
 	})
 
