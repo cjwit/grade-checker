@@ -3,9 +3,11 @@
 <html>
 
 	<head>
-		<title>Image Search Abstraction</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>Grade Checker</title>
 		<link rel="stylesheet" href="src/bootstrap.min.css">
-		<link href="src/nouislider.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="src/styles.css">
 	</head>
 	<body>
 		<div class="container">
@@ -17,71 +19,273 @@
 					What is this thing?
 				</h3>
 				<p>
-					Using the selectors and sliders, you can "choose your own adventure" through our class's projects.
+					It is a tool to help you work out your plan for the semester.
 					The first set of projects are required, but the second set are the ones you can choose between.
+					Each is weighted differently.
+					To ease the math, you can select the ones that you would like to do and play with figuring out what your scores need to be to get the grade that you want for the semester.
 				</p>
+				<p>
+					You are welcome to do as many or as few assignments as you need to get the score for the semester that you want to end up with.
+					Be aware, though, that many of these projects have multiple stages and deadlines that come before the end of the semester, so you cannot wait until the end to wrap up a bunch of work at once.
+				</p>
+				<p>
+					This is for your own use. I cannot see what you type or do here, but I hope that it can be helpful.
+					As the semester moves forward, you can put your actual grades in these boxes to figure out what you need to do moving forward. 
+					Directions for the individual projects are in Canvas.
+				</p>
+
 			</div>
 			<div class="row">
 				<h3>Required Assignments</h3>
 			</div>
-			<div class="row">
-				<form class="form-inline">
-					<div class="form-group">
-						<label for="quizzes">Online Quizzes</label>
-						<input id="quizzes" type="text" class="form-control" value="100">
-					</div>
-				</form>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Online Quizzes <small>are worth 20 points</small></label><br>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='quizzesScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='quizzesScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-			<div class="row">
-				<form class="form-inline">
-					<div class="form-group">
-						<label for="attendance">Attendance</label>
-						<input id="attendance" type="text" class="form-control" value="100">
-					</div>
-				</form>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Attendance <small>is worth 20 points</small></label><br>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='attendanceScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='attendanceScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-			<div class="row">
-				<form class="form-inline">
-					<div class="form-group">
-						<label for="event1">Musical Event Report (1 of 2)</label>
-						<input id="event1" type="text" class="form-control" value="100">
-					</div>
-				</form>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Musical Event Report 1 <small>is worth 5 points</small></label><br>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='event1Score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='event1Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-			<div class="row">
-				<form class="form-inline">
-					<div class="form-group">
-						<label for="event2">Musical Event Report (2 of 2)</label>
-						<input id="event2" type="text" class="form-control" value="100">
-					</div>
-				</form>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Musical Event Report 2 <small>is worth 5 points</small></label><br>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='event2Score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='event2Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 
 			<div class="row">
 				<h3>Choose Your Own Adventure</h3>
 			</div>
 
-			<div class="row">
-				<div class="col-sm-4">Individual Fieldwork Essay</div>
-				<div class="col-sm-4">50</div>
-				<div class="col-sm-4"><div id="essaySlider"></div></div>
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Individual Fieldwork Essay <small>is worth 50 points</small></label><br>
+					<button id="essaySelector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='essayScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='essayScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-4">Fieldwork Documentary Video (with a group of up to 5 people)</div>
-				<div class="col-sm-4">50</div>
-				<div class="col-sm-4"><div id="documentarySlider"></div></div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Fieldwork Documentary Video (with a group of up to 5 people) <small>is worth 50 points</small></label><br>
+					<button id="documentarySelector" class="btn btn-info projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='documentaryScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='documentaryScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Researching and Performing a Piece <small>is worth 50 points</small></label><br>
+					<button id="performanceSelector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='performanceScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='performanceScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Researching and Composing a Piece <small>is worth 50 points</small></label><br>
+					<button id="compositionSelector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='compositionScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='compositionScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Researching and Creating a Poster Presentation <small>is worth 30 points</small></label><br>
+					<button id="posterSelector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='posterScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='posterScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Researching and Writing a World Music Album Review (1 of 2) <small>is worth 10 points</small></label><br>
+					<button id="review1Selector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='review1Score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='review1Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Researching and Writing a World Music Album Review (2 of 2) <small>is worth 10 points</small></label><br>
+					<button id="review2Selector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='review2Score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='review2Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Interviewing an "Elder" from the Community (1 of 2) <small>is worth 10 points</small></label><br>
+					<button id="interview1Selector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='interview1Score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='interview1Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-6">
+					<label>Interviewing an "Elder" from the Community (2 of 2) <small>is worth 10 points</small></label><br>
+					<button id="interview2Selector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-6">
+					<form>
+						<div class='form-group'>
+							<label for='interview2Score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='interview2Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+
 			<div class="row">
-				<h3>
-					<button id="submit" class="btn btn-primary">Calculate!</button>
-					With these numbers, you will get a <span id='numScore'></span>% in this class
-				</h3>
+				<center>
+					<button id="submit" class="btn btn-lg btn-primary">Calculate!</button>
+					<h3>
+						With these numbers, you will get a <span id='numScore'></span>% in this class
+					</h3>
+				</center>
 			</div>
 
 		</div>
 
 		<script src="src/jquery-1.12.3.min.js"></script>
-		<script src="src/nouislider.min.js"></script>
 		<script src="src/script.js"></script>
 
 	</body>
