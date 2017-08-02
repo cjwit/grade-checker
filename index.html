@@ -25,7 +25,7 @@
 					To ease the math, you can select the ones that you would like to do and play with figuring out what your scores need to be to get the grade that you want for the semester.
 				</p>
 				<p>
-					You are welcome to do as many or as few assignments as you need to get the score for the semester that you want to end up with.
+					You are welcome to do as many or as few assignments as you need to get the score for the semester that you want to end up with, though you must choose one and only one of the major projects (worth 30-50 points).
 					Be aware, though, that many of these projects have multiple stages and deadlines that come before the end of the semester, so you cannot wait until the end to wrap up a bunch of work at once.
 				</p>
 				<p>
@@ -41,14 +41,14 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Online Quizzes <small>are worth 20 points</small></label><br>
+					<label>Unit 1 Exam <small>is worth 5 points</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
-							<label for='quizzesScore'>What was/might be your grade?</label>
+							<label for='unit1score'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='quizzesScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<input id='unit1score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
 								<span class="input-group-addon">%</span>
 							</div>
 						</div>
@@ -58,7 +58,75 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Attendance <small>is worth 20 points</small></label><br>
+					<label>Unit 2 Exam <small>is worth 5 points</small></label><br>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='unit2score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='unit2score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>Unit 3 Exam <small>is worth 5 points</small></label><br>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='unit3score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='unit3score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>Unit 4 Exam <small>is worth 5 points</small></label><br>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='unit4score'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='unit4score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>Attendance quizzes <small>are worth 10 points</small></label><br>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='attendanceQuizScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='attendanceQuizScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
+								<span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>Attendance <small>is worth 10 points</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -114,7 +182,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Individual Fieldwork Essay <small>is worth 50 points</small></label><br>
-					<button id="essaySelector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="essaySelector" class="btn btn-default projectSelector">Choose this project</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -132,7 +200,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Fieldwork Documentary Video (with a group of up to 5 people) <small>is worth 50 points</small></label><br>
-					<button id="documentarySelector" class="btn btn-info projectSelector">Do this project</button>
+					<button id="documentarySelector" class="btn btn-info projectSelector">Choose this project</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -150,7 +218,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Researching and Performing a Piece <small>is worth 50 points</small></label><br>
-					<button id="performanceSelector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="performanceSelector" class="btn btn-default projectSelector">Choose this project</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -168,7 +236,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Researching and Composing a Piece <small>is worth 50 points</small></label><br>
-					<button id="compositionSelector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="compositionSelector" class="btn btn-default projectSelector">Choose this project</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -186,7 +254,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Researching and Creating a Poster Presentation <small>is worth 30 points</small></label><br>
-					<button id="posterSelector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="posterSelector" class="btn btn-default projectSelector">Choose this project</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -204,7 +272,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Researching and Writing a World Music Album Review (1 of 2) <small>is worth 10 points</small></label><br>
-					<button id="review1Selector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="review1Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -222,7 +290,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Researching and Writing a World Music Album Review (2 of 2) <small>is worth 10 points</small></label><br>
-					<button id="review2Selector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="review2Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -240,7 +308,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Interviewing an "Elder" from the Community (1 of 2) <small>is worth 10 points</small></label><br>
-					<button id="interview1Selector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="interview1Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -258,7 +326,7 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Interviewing an "Elder" from the Community (2 of 2) <small>is worth 10 points</small></label><br>
-					<button id="interview2Selector" class="btn btn-default projectSelector">Do this project</button>
+					<button id="interview2Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
