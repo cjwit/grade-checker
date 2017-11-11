@@ -1,5 +1,28 @@
 var grade;
 
+var today = new Date()
+
+// Note: January is month 0
+
+var dueDates = {
+	exam1Score: new Date(2017, 8, 15, 23, 59, 0),
+	event1Score: new Date(2017, 9, 13, 23, 59, 0),
+	interview1Score: new Date(2017, 9, 13, 23, 59, 0),
+	proposalScore: new Date(2017, 9, 20, 23, 59, 0),
+	exam2Score: new Date(2017, 9, 20, 23, 59, 0),
+	review1Score: new Date(2017, 9, 27, 23, 59, 0),
+	proposalRevisionScore: new Date(2017, 10, 3, 23, 59, 0),
+	event2Score: new Date(2017, 10, 10, 23, 59, 0),
+	interview2Score: new Date(2017, 10, 27, 23, 59, 0),
+	projectFinalScore: new Date(2017, 11, 1, 23, 59, 0),
+	selfReflectionScore: new Date(2017, 11, 1, 23, 59, 0),
+	review2Score: new Date(2017, 11, 8, 23, 59, 0),
+	attendanceScore: new Date(2017, 11, 13, 23, 59, 0),
+	quizzesScore: new Date(2017, 11, 13, 23, 59, 0),
+	exam3Score: new Date(2017, 11, 13, 23, 59, 0),
+	exam4Score: new Date(2017, 11, 13, 23, 59, 0)
+}
+
 var letterGrade = function(score) {
 	var letter;
 	if (score < 60) {
@@ -47,6 +70,15 @@ var calculate = function() {
 }
 
 $(document).ready(function() {
+
+	$('input').each(function() {
+		notDueYet = dueDates[this.id] >= today
+		if (notDueYet) {
+			$(this).parent().addClass('has-success')
+		}
+
+	})
+
 	calculate();
 
 	$('#submit').click(function() {
