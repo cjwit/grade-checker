@@ -13,24 +13,22 @@
 		<div class="container">
 			<div class="row">
 				<h1>
-					Grade Checker
+					Grade Checker (MUCT1250)
 				</h1>
 				<h3>
 					What is this thing?
 				</h3>
 				<p>
 					It is a tool to help you work out your plan for the semester.
-					The first set of projects are required, but the second set are the ones you can choose between.
-					Each is weighted differently.
-					To ease the math, you can select the ones that you would like to do and play with figuring out what your scores need to be to get the grade that you want for the semester.
+					The first set of assignments are required, but the second set are the ones you can choose between.
+					To ease the math, you can enter your grades from Canvas (or what you hope to get) to keep an eye on where your grade stands.
 				</p>
 				<p>
-					You are welcome to do as many or as few assignments as you need to get the score for the semester that you want to end up with, though you must choose one and only one of the major projects (worth 30-50 points).
+					You are welcome to do as many or as few assignments as you need to get the score for the semester that you want to end up with.
 					Be aware, though, that many of these projects have multiple stages and deadlines that come before the end of the semester, so you cannot wait until the end to wrap up a bunch of work at once.
 				</p>
 				<p>
 					This is for your own use. I cannot see what you type or do here, but I hope that it can be helpful.
-					As the semester moves forward, you can put your actual grades in these boxes to figure out what you need to do moving forward.
 					Directions for the individual projects are in Canvas.
 				</p>
 
@@ -41,92 +39,7 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Unit 1 Exam <small>is worth 5 points</small></label><br>
-				</div>
-				<div class="col-sm-4">
-					<form>
-						<div class='form-group'>
-							<label for='unit1score'>What was/might be your grade?</label>
-							<div class="input-group">
-								<input id='unit1score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="row listing">
-				<div class="col-sm-offset-2 col-sm-4">
-					<label>Unit 2 Exam <small>is worth 5 points</small></label><br>
-				</div>
-				<div class="col-sm-4">
-					<form>
-						<div class='form-group'>
-							<label for='unit2score'>What was/might be your grade?</label>
-							<div class="input-group">
-								<input id='unit2score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="row listing">
-				<div class="col-sm-offset-2 col-sm-4">
-					<label>Unit 3 Exam <small>is worth 5 points</small></label><br>
-				</div>
-				<div class="col-sm-4">
-					<form>
-						<div class='form-group'>
-							<label for='unit3score'>What was/might be your grade?</label>
-							<div class="input-group">
-								<input id='unit3score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="row listing">
-				<div class="col-sm-offset-2 col-sm-4">
-					<label>Unit 3 Exam Part 2 (BGP Assessment) <small>is worth 5 points</small></label><br>
-				</div>
-				<div class="col-sm-4">
-					<form>
-						<div class='form-group'>
-							<label for='unit4score'>What was/might be your grade?</label>
-							<div class="input-group">
-								<input id='unit4score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="row listing">
-				<div class="col-sm-offset-2 col-sm-4">
-					<label>Attendance quizzes <small>are worth 10 points</small></label><br>
-				</div>
-				<div class="col-sm-4">
-					<form>
-						<div class='form-group'>
-							<label for='attendanceQuizScore'>What was/might be your grade?</label>
-							<div class="input-group">
-								<input id='attendanceQuizScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="row listing">
-				<div class="col-sm-offset-2 col-sm-4">
-					<label>Attendance <small>is worth 10 points</small></label><br>
+					<label>Attendance <small>is out of 100% and worth 10 points toward your final grade</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
@@ -143,6 +56,23 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
+					<label>In-Class Quizzes <small>are worth 1 point each</small></label><br>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='quizzesScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='quizzesScore' class='form-control' type='text' value='10' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">add up the total points</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
 					<label>Musical Event Report 1 <small>is worth 5 points</small></label><br>
 				</div>
 				<div class="col-sm-4">
@@ -150,8 +80,8 @@
 						<div class='form-group'>
 							<label for='event1Score'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='event1Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='event1Score' class='form-control' type='text' value='5' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -167,8 +97,8 @@
 						<div class='form-group'>
 							<label for='event2Score'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='event2Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='event2Score' class='form-control' type='text' value='5' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -176,21 +106,20 @@
 			</div>
 
 			<div class="row">
-				<h3>Choose Your Own Adventure</h3>
+				<h3>Exams</h3>
 			</div>
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Individual Fieldwork Essay <small>is worth 50 points</small></label><br>
-					<button id="essaySelector" class="btn btn-default projectSelector">Choose this project</button>
+					<label>Exam 1 <small>is out of 30 and worth 5 points toward your final grade</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
-							<label for='essayScore'>What was/might be your grade?</label>
+							<label for='quiz1'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='essayScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='quiz1' class='form-control' type='text' value='30' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -199,16 +128,15 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Fieldwork Documentary Video (with a group of up to 5 people) <small>is worth 50 points</small></label><br>
-					<button id="documentarySelector" class="btn btn-info projectSelector">Choose this project</button>
+					<label>Exam 2 <small>is out of 30 and worth 5 points toward your final grade</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
-							<label for='documentaryScore'>What was/might be your grade?</label>
+							<label for='quiz2'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='documentaryScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='quiz2' class='form-control' type='text' value='30' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -217,16 +145,15 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Researching and Performing a Piece <small>is worth 50 points</small></label><br>
-					<button id="performanceSelector" class="btn btn-default projectSelector">Choose this project</button>
+					<label>Exam 3 <small>is out of 30 and worth 5 points toward your final grade</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
-							<label for='performanceScore'>What was/might be your grade?</label>
+							<label for='quiz3'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='performanceScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='quiz3' class='form-control' type='text' value='30' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -235,16 +162,36 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Researching and Composing a Piece <small>is worth 50 points</small></label><br>
-					<button id="compositionSelector" class="btn btn-default projectSelector">Choose this project</button>
+					<label>Exam 3 (Part 2, BGP) <small>is out of 30 and worth 5 points toward your final grade</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
-							<label for='compositionScore'>What was/might be your grade?</label>
+							<label for='quiz4'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='compositionScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='quiz4' class='form-control' type='text' value='30' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row">
+				<h3>Project Assignments</h3>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>Proposal <small>is worth 5 points</small></label><br>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='proposalScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='proposalScore' class='form-control' type='text' value='5' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -253,34 +200,89 @@
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
-					<label>Researching and Creating a Poster Presentation <small>is worth 30 points</small></label><br>
-					<button id="posterSelector" class="btn btn-default projectSelector">Choose this project</button>
+					<label>Proposal Revision <small>is worth 10 points</small></label><br>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
-							<label for='posterScore'>What was/might be your grade?</label>
+							<label for='proposalRevisionScore'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='posterScore' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='proposalRevisionScore' class='form-control' type='text' value='10' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
 				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>50 Point Project Final Submission <small>is worth 30 points</small></label><br>
+					<button id="50pointSelector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='50pointScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='50pointScore' class='form-control' type='text' value='30' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>30 Point Project Final Submission <small>is worth 10 points</small></label><br>
+					<button id="30pointSelector" class="btn btn-default projectSelector">Do this project</button>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='30pointScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='30pointScore' class='form-control' type='text' value='10' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row listing">
+				<div class="col-sm-offset-2 col-sm-4">
+					<label>Self-Reflection <small>is worth 5 points</small></label><br>
+				</div>
+				<div class="col-sm-4">
+					<form>
+						<div class='form-group'>
+							<label for='selfReflectionScore'>What was/might be your grade?</label>
+							<div class="input-group">
+								<input id='selfReflectionScore' class='form-control' type='text' value='5' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row">
+				<h3>Other Assignments</h3>
 			</div>
 
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Researching and Writing a World Music Album Review (1 of 2) <small>is worth 10 points</small></label><br>
-					<button id="review1Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
 							<label for='review1Score'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='review1Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='review1Score' class='form-control' type='text' value='0' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -290,15 +292,14 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Researching and Writing a World Music Album Review (2 of 2) <small>is worth 10 points</small></label><br>
-					<button id="review2Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
 							<label for='review2Score'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='review2Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='review2Score' class='form-control' type='text' value='0' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -308,15 +309,14 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Interviewing an "Elder" from the Community (1 of 2) <small>is worth 10 points</small></label><br>
-					<button id="interview1Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
 							<label for='interview1Score'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='interview1Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='interview1Score' class='form-control' type='text' value='0' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>
@@ -326,15 +326,14 @@
 			<div class="row listing">
 				<div class="col-sm-offset-2 col-sm-4">
 					<label>Interviewing an "Elder" from the Community (2 of 2) <small>is worth 10 points</small></label><br>
-					<button id="interview2Selector" class="btn btn-default projectSelector">Do this assignment</button>
 				</div>
 				<div class="col-sm-4">
 					<form>
 						<div class='form-group'>
 							<label for='interview2Score'>What was/might be your grade?</label>
 							<div class="input-group">
-								<input id='interview2Score' class='form-control' type='text' value='100' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Percent">
-								<span class="input-group-addon">%</span>
+								<input id='interview2Score' class='form-control' type='text' value='0' onkeypress='return event.charCode >= 48 && event.charCode <= 57' aria-label="Points">
+								<span class="input-group-addon">points</span>
 							</div>
 						</div>
 					</form>

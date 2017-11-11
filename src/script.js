@@ -1,5 +1,5 @@
 var grade;
-var projects = ['documentary'];
+var projects = ['50pointSelector'];
 var values = {
 	essay: 0.50,
 	documentary: 0.50,
@@ -46,67 +46,25 @@ var letterGrade = function(score) {
 
 var calculate = function() {
 
-	var unit1 = parseInt($('#unit1score').val()) * 0.05
-	var unit2 = parseInt($('#unit2score').val()) * 0.05
-	var unit3 = parseInt($('#unit3score').val()) * 0.05
-	var unit4 = parseInt($('#unit4score').val()) * 0.05
-	var attendanceQuiz = parseInt($('#attendanceQuizScore').val()) * 0.1
-	var attendance = parseInt($('#attendanceScore').val()) * 0.1
+	var quizzes = parseInt($('#quizzesScore').val()) * 0.2
+	var attendance = parseInt($('#attendanceScore').val()) * 0.2
 	var event1 = parseInt($('#event1Score').val()) * 0.05
 	var event2 = parseInt($('#event2Score').val()) * 0.05
 
-	var numScore = Math.round(unit1 + unit2 + unit3 + unit4 + attendanceQuiz + attendance + event1 + event2 + calculateProjects());
+	var numScore = Math.round(quizzes + attendance + event1 + event2 + calculateProjects());
 	$('#numScore').text(numScore);
 	letterGrade(numScore);
-}
-
-var disableButtons = function(project, checked) {
-	var majorProjects = ['essay', 'documentary', 'performance', 'composition', 'poster'];
-	majorProjects.splice(majorProjects.indexOf(project), 1);
-
-	if (checked) {
-		for (var i = 0; i < majorProjects.length; i++) {
-			var p = majorProjects[i],
-				b = $('#' + p + 'Selector');
-			b.text('Choose this project');
-			b.removeClass('btn-info');
-			b.addClass('btn-default');
-			b.prop('disabled', false);
-		}
-		$('#' + project + 'Selector').text('Choose this project');
-	} else {
-		for (var i = 0; i < majorProjects.length; i++) {
-			var p = majorProjects[i],
-				b = $('#' + p + 'Selector');
-			b.text('Choose this project');
-			b.removeClass('btn-info');
-			b.addClass('btn-default');
-			b.prop('disabled', true);
-		}
-		projects.push(project);
-		$('#' + project + 'Selector').text('Deselect this project');
-	}
 }
 
 var toggleButton = function(button) {
 	$(button).toggleClass('btn-default');
 	$(button).toggleClass('btn-info');
 	var project = $(button).attr('id').replace('Selector','');
-
-	var majorProjects = ['essay', 'documentary', 'performance', 'composition', 'poster'];
-	if (majorProjects.indexOf(project) !== -1) {
-		var checked = projects.indexOf(project) !== -1;
-		for (i = 0; i < majorProjects.length; i++) {
-			projects.splice(majorProjects[i], 1);
-		}
-		disableButtons(project, checked);
+	var i = projects.indexOf(project);
+	if (i == -1) {
+		projects.push(project);
 	} else {
-		var i = projects.indexOf(project);
-		if (i == -1) {
-			projects.push(project);
-		} else {
-			projects.splice(i, 1);
-		}
+		projects.splice(i, 1);
 	}
 }
 
