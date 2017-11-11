@@ -1,30 +1,4 @@
 var grade;
-var projects = ['50pointSelector'];
-var values = {
-	essay: 0.50,
-	documentary: 0.50,
-	performance: 0.50,
-	composition: 0.50,
-	poster: 0.30,
-	review1: 0.10,
-	review2: 0.10,
-	interview1: 0.10,
-	interview2: 0.10
-}
-
-var calculateProjects = function() {
-	var sum = 0;
-
-	for (var i = 0; i < projects.length; i++) {
-		var current = projects[i];
-		var value = values[projects[i]];
-		var inputBoxName = "#" + current + "Score";
-		var score = $(inputBoxName).val();
-		sum += score * value;
-	}
-
-	return sum;
-}
 
 var letterGrade = function(score) {
 	var letter;
@@ -46,26 +20,30 @@ var letterGrade = function(score) {
 
 var calculate = function() {
 
-	var quizzes = parseInt($('#quizzesScore').val()) * 0.2
-	var attendance = parseInt($('#attendanceScore').val()) * 0.2
-	var event1 = parseInt($('#event1Score').val()) * 0.05
-	var event2 = parseInt($('#event2Score').val()) * 0.05
+	var attendance = parseFloat($('#attendanceScore').val()) * 0.1 || 0
+	var quizzes = parseFloat($('#quizzesScore').val()) || 0
+	var event1 = parseFloat($('#event1Score').val()) || 0
+	var event2 = parseFloat($('#event2Score').val()) || 0
+	var exam1 = parseFloat($('#exam1Score').val()) / 6 || 0
+	var exam2 = parseFloat($('#exam2Score').val()) / 6 || 0
+	var exam3 = parseFloat($('#exam3Score').val()) / 6 || 0
+	var exam4 = parseFloat($('#exam4Score').val()) / 6 || 0
+	var proposal = parseFloat($('#proposalScore').val()) || 0
+	var proposalRevision = parseFloat($('#proposalRevisionScore').val()) || 0
+	var projectFinal = parseFloat($('#projectFinalScore').val()) || 0
+	var selfReflection = parseFloat($('#selfReflectionScore').val()) || 0
+	var review1 = parseFloat($('#review1Score').val()) || 0
+	var review2 = parseFloat($('#review2Score').val()) || 0
+	var interview1 = parseFloat($('#interview1Score').val()) || 0
+	var interview2 = parseFloat($('#interview2Score').val()) || 0
 
-	var numScore = Math.round(quizzes + attendance + event1 + event2 + calculateProjects());
+	var numScore = attendance + quizzes + event1 + event2 +
+			exam1 + exam2 + exam3 + exam4 +
+			proposal + proposalRevision + projectFinal + selfReflection +
+			review1 + review2 + interview1 + interview2;
+	numScore = numScore.toFixed(1)
 	$('#numScore').text(numScore);
 	letterGrade(numScore);
-}
-
-var toggleButton = function(button) {
-	$(button).toggleClass('btn-default');
-	$(button).toggleClass('btn-info');
-	var project = $(button).attr('id').replace('Selector','');
-	var i = projects.indexOf(project);
-	if (i == -1) {
-		projects.push(project);
-	} else {
-		projects.splice(i, 1);
-	}
 }
 
 $(document).ready(function() {
@@ -75,8 +53,22 @@ $(document).ready(function() {
 		calculate();
 	})
 
-	$('.projectSelector').click(function() {
-		toggleButton(this);
+	$('#50pointSelector').click(function() {
+		$(this).removeClass('btn-default');
+		$(this).addClass('btn-info');
+		$('#30pointSelector').removeClass('btn-info');
+		$('#30pointSelector').addClass('btn-default');
+		$('#projectPoints').text("30");
+		$('#projectFinalScore').val("");
+	})
+
+	$('#30pointSelector').click(function() {
+		$(this).removeClass('btn-default');
+		$(this).addClass('btn-info');
+		$('#50pointSelector').removeClass('btn-info');
+		$('#50pointSelector').addClass('btn-default');
+		$('#projectPoints').text("10");
+		$('#projectFinalScore').val("");
 	})
 
 })
